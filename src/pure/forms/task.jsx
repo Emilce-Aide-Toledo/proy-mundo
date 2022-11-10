@@ -12,7 +12,7 @@ const TaskComponent = ({ task }) =>{
                 Descripción: {task.description }
             </h3>
             <h3>
-                Level:  {task.level}
+                Estado:  {task.level}
             </h3>
             <h4>
                 La tarea esta: { task.completed ? 'COMPLETADA': 'PENDIENTE'}
@@ -24,4 +24,6 @@ const TaskComponent = ({ task }) =>{
 
 TaskComponent.protoTypes ={
     task: Proptypes.instanceOf(Task)
-}; 
+};
+
+export default TaskComponent;
