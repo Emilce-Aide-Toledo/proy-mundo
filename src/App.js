@@ -4,6 +4,7 @@ import './App.css';
 // import EjemploState from './hooks/EjemploState';
 import EjemploEffect from './hooks/EjemploEffect';
 import { EjemploContext } from './hooks/EjemploContext';
+import EjemploChildren from './hooks/EjemploChildren';
 
 function App() {
   return (
@@ -14,7 +15,12 @@ function App() {
      {/*Ejemplo de HOOK useState*/}
      {/* <EjemploState></EjemploState> */}
      {/* <EjemploEffect></EjemploEffect> */}
-     <EjemploContext></EjemploContext>
+     {/* <EjemploContext></EjemploContext> */}
+     <EjemploChildren name = 'Emilce'>
+      <h3>
+        Contenido de props.children
+      </h3>
+     </EjemploChildren>
       </header>
     </div>
   );
