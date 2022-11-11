@@ -56,7 +56,7 @@ export const EjemploContext = () => {
         setSesionData(
             {
                 token: 'JWT67790980803',
-                sesion: sesionData +1 
+                sesion: sesionData.sesion + 1 
             }
         )
     }

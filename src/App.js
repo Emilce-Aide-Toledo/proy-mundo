@@ -3,6 +3,7 @@ import './App.css';
 // import TaskListComponent from './components/containers/task_list';
 // import EjemploState from './hooks/EjemploState';
 import EjemploEffect from './hooks/EjemploEffect';
+import { EjemploContext } from './hooks/EjemploContext';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
      {/* <TaskListComponent></TaskListComponent> */}
      {/*Ejemplo de HOOK useState*/}
      {/* <EjemploState></EjemploState> */}
-     <EjemploEffect></EjemploEffect>
+     {/* <EjemploEffect></EjemploEffect> */}
+     <EjemploContext></EjemploContext>
       </header>
     </div>
   );
