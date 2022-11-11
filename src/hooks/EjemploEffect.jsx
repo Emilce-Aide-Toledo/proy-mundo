@@ -35,13 +35,37 @@ const EjemploEffect = () => {
      * se ejecuta aquello que esté dentro del useEffect
      */
 
-    useEffect(()=>{
-        console.log('Cambio en el estado el componente');
-        console.log('Mostrando Referencia a elemento del DOM: ');
-        console.log(miRef);
-    })
+    // useEffect(()=>{
+    //     console.log('Cambio en el estado el componente');
+    //     console.log('Mostrando Referencia a elemento del DOM: ');
+    //     console.log(miRef);
+    // })
 
 
+     /**
+     * ? Caso 2: Ejecutar SOLO CUANDO CAMBIE CONTADOR1
+     * Cada vez que haya un cambio en contador1 se ejecutara
+     * Si existe un cambio en contador2, no se ejecutara
+     */
+
+    //  useEffect(()=>{
+    //     console.log('Cambio en el estado del contador 1');
+    //     console.log('Mostrando Referencia a elemento del DOM: ');
+    //     console.log(miRef);
+    // }, [contador1])
+
+
+     /**
+     * ? Caso 3: Ejecutar SOLO CUANDO CAMBIE CONTADOR1 o CONTADOR2
+     * Cada vez que haya un cambio en contador1 se ejecutara
+     * Si existe un cambio en contador2,  tambien se ejecutara
+     */
+
+      useEffect(()=>{
+            console.log('Cambio en el estado del contador 1 o contador 2');
+            console.log('Mostrando Referencia a elemento del DOM: ');
+            console.log(miRef);
+        }, [contador1, contador2])
     return (
         <div>
               <h1> ***Ejemplo de useState(), useRef() y useEffect *** </h1>
