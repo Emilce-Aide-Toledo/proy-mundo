@@ -5,10 +5,12 @@ import TaskComponent from "../pure/task";
 
 const TaskListComponent = () => {
 
-    const defaultTask = new Task('Ejemplo', 'Descripción por defecto', false, LEVELS.NORMAL);
+    const defaultTask1 = new Task('Ejemplo1', 'Descripción1 ', true, LEVELS.NORMAL);
+    const defaultTask2 = new Task('Ejemplo2', 'Descripción2 ', false, LEVELS.URGENT);
+    const defaultTask3 = new Task('Ejemplo3', 'Descripción3', false, LEVELS.BLOCKING);
     
     //Estado del componente
-    const [tasks, setTasks] = useState([defaultTask]);
+    const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loading, setLoading] = useState(true);
     
     //Control del ciclo de vida del componente
@@ -39,16 +41,23 @@ const TaskListComponent = () => {
                  <table>
                    <thead>
                       <tr>
-                        <th scope='col'>TITULO</th>
-                        <th scope='col'>DESCRIPCIÓN</th>
-                        <th scope='col'>PRIORIDAD</th>
-                        <th scope='col'>ACCIONES</th>
+                        <th scope='col'> TITULO </th>
+                        <th scope='col'> DESCRIPCIÓN </th>
+                        <th scope='col'> PRIORIDAD </th>
+                        <th scope='col'> ACCIONES </th>
                       </tr>
                     </thead>
                  </table>
                  <tbody>
-                    {/** TODO: Iterar sobre una lista de tareas */}
-                    <TaskComponent task = {defaultTask}></TaskComponent>
+                    {tasks.map((task, index)=>{
+                      return(
+                       <TaskComponent
+                        key={index} 
+                        task = {task}>
+                        </TaskComponent> 
+                      )
+                    }
+                    )}
                  </tbody>
               </div>
            </div>
