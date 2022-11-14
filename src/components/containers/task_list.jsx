@@ -1,3 +1,4 @@
+import add from "add";
 import React, {useState, useEffect} from "react";
 import { LEVELS } from "../../models/levels.enum";
 import { Task } from "../../models/task.class";
@@ -23,8 +24,28 @@ const TaskListComponent = () => {
         };
     }, [tasks]);
 
-    const changeCompleted = (id) => {
-        console.log('TODO')
+    const completeTask = (task)=>{
+      console.log('Complete this Task:', task)
+      const index = tasks.indexOf(task);
+      const tempTask = [...tasks];
+      tempTask[index].completed = !tempTask[index].completed
+      setTasks(tempTask)
+    }
+
+    const deleteTask = (task) =>{
+      console.log('Delete this Task:', task)
+      const index = tasks.indexOf(task);
+      const tempTask = [...tasks];
+      tempTask.splice(index,1)
+      setTasks(tempTask)
+    }
+
+    const addTask = (task) =>{
+      console.log('Delete this Task:', task)
+      const index = tasks.indexOf(task);
+      const tempTask = [...tasks];
+      tempTask.push(task)
+      setTasks(tempTask)
     }
 
     return (
@@ -53,7 +74,10 @@ const TaskListComponent = () => {
                       return(
                        <TaskComponent
                         key={index} 
-                        task = {task}>
+                        task = {task}
+                        complete = {completeTask}
+                        remove={deleteTask}
+                        >
                         </TaskComponent> 
                       )
                     }
@@ -61,9 +85,9 @@ const TaskListComponent = () => {
                  </tbody>
                 </table>
               </div>
-              <TaskForm></TaskForm>
            </div>
         </div>
+              <TaskForm add={addTask}></TaskForm>
     </div>
     )
 }
