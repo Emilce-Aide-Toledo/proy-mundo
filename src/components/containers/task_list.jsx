@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { LEVELS } from "../../models/levels.enum";
 import { Task } from "../../models/task.class";
+import TaskForm from "../pure/forms/taskForm";
 import TaskComponent from "../pure/task";
 
 const TaskListComponent = () => {
@@ -38,7 +39,7 @@ const TaskListComponent = () => {
               </div>
               {/* Card Body (content)*/}
               <div className='card-body' data-mdb-perfect-scrollbar = 'true' style = { {position: 'relative', height: '400px'}}>
-                 <table>
+                <table>
                    <thead>
                       <tr>
                         <th scope='col'> TITULO </th>
@@ -47,8 +48,7 @@ const TaskListComponent = () => {
                         <th scope='col'> ACCIONES </th>
                       </tr>
                     </thead>
-                 </table>
-                 <tbody>
+                   <tbody>
                     {tasks.map((task, index)=>{
                       return(
                        <TaskComponent
@@ -59,7 +59,9 @@ const TaskListComponent = () => {
                     }
                     )}
                  </tbody>
+                </table>
               </div>
+              <TaskForm></TaskForm>
            </div>
         </div>
     </div>
