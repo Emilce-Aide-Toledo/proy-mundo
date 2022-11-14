@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
-import Father from './components/containers/father';
+// import Father from './components/containers/father';
 import TaskListComponent from './components/containers/task_list';
+import OptionalRender from './components/pure/forms/optionalRender';
 // import EjemploState from './hooks/EjemploState';
 // import EjemploEffect from './hooks/EjemploEffect';
 // import { EjemploContext } from './hooks/EjemploContext';
@@ -26,7 +27,9 @@ function App() {
      {/* <GreetingStyled name = 'Emi'></GreetingStyled>
       </header> */}
       {/** Gestión de eventos */}
-      <Father></Father>
+      {/* <Father></Father> */}
+      {/**Ejemplos del renderizado condicional */}
+      <OptionalRender></OptionalRender>
     </div>
   );
 }
