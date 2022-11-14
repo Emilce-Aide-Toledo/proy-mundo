@@ -40,7 +40,7 @@ const TaskForm = ({add}) => {
             required 
             placeholder='Descripción'
             />
-            <label htmlFor='selectLevel' className='sr-only'>Prioritario</label>
+            <label htmlFor='selectLevel' className='sr-only'>Prioridad: </label>
              
             <select ref={levelRef} defaultValue={LEVELS.NORMAL} id='selectLevel'>
               <option value={LEVELS.NORMAL}>
