@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import Father from './components/containers/father';
 import TaskListComponent from './components/containers/task_list';
 // import EjemploState from './hooks/EjemploState';
 // import EjemploEffect from './hooks/EjemploEffect';
@@ -24,6 +25,8 @@ function App() {
      </EjemploChildren> */}
      {/* <GreetingStyled name = 'Emi'></GreetingStyled>
       </header> */}
+      {/** Gestión de eventos */}
+      <Father></Father>
     </div>
   );
 }
