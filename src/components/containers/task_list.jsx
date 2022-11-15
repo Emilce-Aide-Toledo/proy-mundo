@@ -47,6 +47,44 @@ const TaskListComponent = () => {
       setTasks(tempTask)
     }
 
+    const Table = () =>{
+      return(
+        <table>
+        <thead>
+           <tr>
+             <th scope='col'> TITULO </th>
+             <th scope='col'> DESCRIPCIÓN </th>
+             <th scope='col'> PRIORIDAD </th>
+             <th scope='col'> ACCIONES </th>
+           </tr>
+         </thead>
+        <tbody>
+         {tasks.map((task, index)=>{
+           return(
+            <TaskComponent
+             key={index} 
+             task = {task}
+             complete = {completeTask}
+             remove={deleteTask}
+             >
+             </TaskComponent> 
+           )
+         }
+         )}
+      </tbody>
+     </table>
+
+      )
+    }
+
+    let tasksTable;
+
+    if(tasks.length > 0){
+      tasksTable = <Table></Table>
+    }else{
+      tasksTable = <h3>No hay tareas que mostrar</h3>
+    }
+
     return (
     <div>
         <div className='col-12'>
@@ -59,30 +97,7 @@ const TaskListComponent = () => {
               </div>
               {/* Card Body (content)*/}
               <div className='card-body' data-mdb-perfect-scrollbar = 'true' style = { {position: 'relative', height: '400px'}}>
-                <table>
-                   <thead>
-                      <tr>
-                        <th scope='col'> TITULO </th>
-                        <th scope='col'> DESCRIPCIÓN </th>
-                        <th scope='col'> PRIORIDAD </th>
-                        <th scope='col'> ACCIONES </th>
-                      </tr>
-                    </thead>
-                   <tbody>
-                    {tasks.map((task, index)=>{
-                      return(
-                       <TaskComponent
-                        key={index} 
-                        task = {task}
-                        complete = {completeTask}
-                        remove={deleteTask}
-                        >
-                        </TaskComponent> 
-                      )
-                    }
-                    )}
-                 </tbody>
-                </table>
+               {tasksTable}
               </div>
            </div>
         </div>
