@@ -2,7 +2,8 @@
 import './App.css';
 // import Father from './components/containers/father';
 // import TaskListComponent from './components/containers/task_list';
-import LoginFormik from './components/pure/forms/loginFormik';
+// import LoginFormik from './components/pure/forms/loginFormik';
+import RegisterFormik from './components/pure/forms/registerFormik';
 // import OptionalRender from './components/pure/forms/optionalRender';
 // import EjemploState from './hooks/EjemploState';
 // import EjemploEffect from './hooks/EjemploEffect';
@@ -32,7 +33,8 @@ function App() {
       {/**Ejemplos del renderizado condicional */}
       {/* <OptionalRender></OptionalRender> */}
       {/** Ejemplos de uso de Formik y Yup */}
-      <LoginFormik></LoginFormik>
+      {/* <LoginFormik></LoginFormik> */}
+      <RegisterFormik></RegisterFormik>
     </div>
   );
 }
