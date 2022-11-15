@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
 // import Father from './components/containers/father';
-import TaskListComponent from './components/containers/task_list';
-import OptionalRender from './components/pure/forms/optionalRender';
+// import TaskListComponent from './components/containers/task_list';
+import LoginFormik from './components/pure/forms/loginFormik';
+// import OptionalRender from './components/pure/forms/optionalRender';
 // import EjemploState from './hooks/EjemploState';
 // import EjemploEffect from './hooks/EjemploEffect';
 // import { EjemploContext } from './hooks/EjemploContext';
@@ -14,7 +15,7 @@ function App() {
     <div className="App">
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" /> */}
-     <TaskListComponent></TaskListComponent>
+     {/* <TaskListComponent></TaskListComponent> */}
      {/*Ejemplo de HOOK useState*/}
      {/* <EjemploState></EjemploState>
      <EjemploEffect></EjemploEffect>
@@ -29,7 +30,9 @@ function App() {
       {/** Gestión de eventos */}
       {/* <Father></Father> */}
       {/**Ejemplos del renderizado condicional */}
-      <OptionalRender></OptionalRender>
+      {/* <OptionalRender></OptionalRender> */}
+      {/** Ejemplos de uso de Formik y Yup */}
+      <LoginFormik></LoginFormik>
     </div>
   );
 }
