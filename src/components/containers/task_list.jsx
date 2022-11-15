@@ -17,7 +17,7 @@ const TaskListComponent = () => {
     //Control del ciclo de vida del componente
     useEffect(() => {
         console.log('Task State has been modified');
-        setLoading(false);
+          setLoading(false);
         return () => {
             console.log('TaskList component is goin to unmount...')
         };
@@ -41,7 +41,6 @@ const TaskListComponent = () => {
 
     const addTask = (task) =>{
       console.log('Delete this Task:', task)
-      const index = tasks.indexOf(task);
       const tempTask = [...tasks];
       tempTask.push(task)
       setTasks(tempTask)
@@ -82,7 +81,18 @@ const TaskListComponent = () => {
     if(tasks.length > 0){
       tasksTable = <Table></Table>
     }else{
-      tasksTable = <h3>No hay tareas que mostrar</h3>
+      tasksTable = (
+      <div>
+      <h3>No hay tareas que mostrar</h3>
+      <h6>Ya puedes crear tu primer tarea</h6>
+      </div>
+      )
+    }
+    
+    const loadingStyle = {
+      color: 'grey',
+      fontSize: '20px',
+      fontWeigth: 'bold'
     }
 
     return (
@@ -97,11 +107,12 @@ const TaskListComponent = () => {
               </div>
               {/* Card Body (content)*/}
               <div className='card-body' data-mdb-perfect-scrollbar = 'true' style = { {position: 'relative', height: '400px'}}>
-               {tasksTable}
+              {/**TODO: Add Loading Spinner */}
+               {loading ? (<p style = {loadingStyle}>Cargando tareas</p>)  : tasksTable}
               </div>
            </div>
         </div>
-              <TaskForm add={addTask}></TaskForm>
+              <TaskForm add={addTask}  length= {tasks.length}></TaskForm>
     </div>
     )
 }
