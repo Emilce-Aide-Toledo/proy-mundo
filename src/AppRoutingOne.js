@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
-import NotFoundPage from './pages/404/NotFoundPage'
-import AboutPage from './pages/about-faqs/AboutPage';
+// import NotFoundPage from './pages/404/NotFoundPage'
+// import AboutPage from './pages/about-faqs/AboutPage';
 import ProfilePage from './pages/profile/ProfilePage';
-import TaskListComponent from './components/containers/task_list'
-import TaskDetailPage from './pages/tasks/TaskDetailPage';
+// import TaskListComponent from './components/containers/task_list'
+// import TaskDetailPage from './pages/tasks/TaskDetailPage';
 import LoginPage from './pages/auth/LoginPage';
-import Dashboard from './pages/home/Dashboard';
+// import Dashboard from './pages/home/Dashboard';
+import FetchExample from './components/pure/forms/FetchExample';
 
 function AppRoutingOne() {
 
@@ -39,7 +40,7 @@ function AppRoutingOne() {
           <Link to='/profile'> | PROFILE | </Link>
           <Link to='/tasks'> | TASK | </Link>
           <Link to='/task/1'> | TASK 1 | </Link>
-          <Link to='/task/2'> | TASK 2 | </Link>
+          <Link to='/users'> | Users | </Link>
           <Link to='/login'> | LOGIN | </Link>
         </aside>
         <main>
@@ -63,7 +64,8 @@ function AppRoutingOne() {
             ()=><LoginPage/>
           } */}
         </Route>
-        <Route path='/tasks' element={<TaskListComponent/>}></Route>
+        <Route path='/users' element={<FetchExample/>}/>
+        {/* <Route path='/tasks' element={<TaskListComponent/>}></Route>
         <Route 
         exact 
         path='/task/:id' 
@@ -75,7 +77,7 @@ function AppRoutingOne() {
         </Route>
         <Route path='/about' element={<AboutPage/>}></Route>
         <Route element={<NotFoundPage/>}></Route>
-        <Route path='/dashboard' element={<Dashboard/>}></Route>
+        <Route path='/dashboard' element={<Dashboard/>}></Route> */}
        </Routes>
         </main>
       </div>
