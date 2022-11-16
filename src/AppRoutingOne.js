@@ -9,6 +9,8 @@ import ProfilePage from './pages/profile/ProfilePage';
 import LoginPage from './pages/auth/LoginPage';
 // import Dashboard from './pages/home/Dashboard';
 import FetchExample from './components/pure/forms/FetchExample';
+import AxiosExample from './components/pure/forms/AxiosExample';
+// import AxiosExample from './components/pure/forms/AxiosExample';
 
 function AppRoutingOne() {
 
@@ -42,10 +44,12 @@ function AppRoutingOne() {
           <Link to='/task/1'> | TASK 1 | </Link>
           <Link to='/users'> | Users | </Link>
           <Link to='/login'> | LOGIN | </Link>
+          <Link to='/axios'> | Axios | </Link>
         </aside>
         <main>
         <Routes>
         <Route exact path='/' element= {<HomePage/>}></Route>
+        <Route exact path='/axios' element= {<AxiosExample/>}></Route>
         <Route path='/profile' element={<ProfilePage/>}>
           {/* {
             logged ?
