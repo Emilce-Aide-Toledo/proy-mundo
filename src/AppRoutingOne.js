@@ -7,6 +7,7 @@ import ProfilePage from './pages/profile/ProfilePage';
 import TaskListComponent from './components/containers/task_list'
 import TaskDetailPage from './pages/tasks/TaskDetailPage';
 import LoginPage from './pages/auth/LoginPage';
+import Dashboard from './pages/home/Dashboard';
 
 function AppRoutingOne() {
 
@@ -74,6 +75,7 @@ function AppRoutingOne() {
         </Route>
         <Route path='/about' element={<AboutPage/>}></Route>
         <Route element={<NotFoundPage/>}></Route>
+        <Route path='/dashboard' element={<Dashboard/>}></Route>
        </Routes>
         </main>
       </div>
