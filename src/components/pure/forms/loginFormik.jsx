@@ -33,7 +33,7 @@ const LoginFormik = () => {
               await new Promise((r) => setTimeout(r, 500));
               alert(JSON.stringify(values, null, 2));
               // We Save The data in the localStorage
-              localStorage.setItem('credentials', values)
+              await localStorage.setItem('credentials', values)
             }}   
          >
 
