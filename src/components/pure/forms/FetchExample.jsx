@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { getAllPageUsers, getAllUsers, getUserDetails } from '../../../services/FetchService';
+import { getAllPageUsers, getAllUsers, getUserDetails, login } from '../../../services/FetchService';
 
 const FetchExample = () => {
 
@@ -72,8 +72,24 @@ const FetchExample = () => {
     
     }
 
+    const authUser = () => {
+      login('eve.holt@reqres.in', 'cityslicka')        
+      .then((res)=>{
+        console.log(`Token ${res.token}`);
+        sessionStorage.setItem('token', res.token);
+       })
+      .catch((err)=>{
+        alert(`Error while login user: ${err}`)
+      })
+      .finally(()=>{
+        console.log('Finally. Login User: Navigate to Home')
+      })
+
+    }
+
     return (
         <div>
+        <button onClick={authUser}>Auth User</button>
             <h2> Users: </h2>
             {users.map((user, index)=>
             (<p key={index} onClick={() => obtainUserDetails(user.id)}>
@@ -90,14 +106,16 @@ const FetchExample = () => {
             </button>
             <div>
                 <h3> User Details</h3>
-                {selectedUser && (
+                {selectedUser !== null ? (
                     <div>
                         <p> Name: {selectedUser.first_name}</p>
                         <p> Last Name: {selectedUser.last_name}</p>
                         <p> Email: {selectedUser.email}</p>
                         <img alt='Imagen de perfil' src={selectedUser.avatar} style={{height:'150px', width:'150px'}}/>
                     </div>
-                )}
+                )
+                :
+                (<p>Please click on a User to see its details</p>)}
             </div>
         </div>
     );
